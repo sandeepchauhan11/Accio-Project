@@ -9,33 +9,24 @@ import java.awt.Rectangle;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-/**
- * the main menu at the start of the game
- * 
- * @author Zayed
- *
- */
+
 public class MainMenu extends MouseAdapter {
 
 	public boolean active; // true if main menu is displaying
 
-	// Play button
+	
 	private Rectangle playBtn; // Play Button
 	private String playTxt = "Play";
-	private boolean pHighlight = false; // true if the mouse hovered over the Play button
+	private boolean pHighlight = false; 
 
 	// Quit button
-	private Rectangle quitBtn; // Quit Button
+	private Rectangle quitBtn; 
 	private String quitTxt = "Quit";
-	private boolean qHighlight = false; // true if the mouse hovered over the Quit button
+	private boolean qHighlight = false; 
 
 	private Font font;
 
-	/**
-	 * constructor
-	 * 
-	 * @param game - the Game object
-	 */
+	
 	public MainMenu(Game game) {
 
 		active = true;
@@ -58,11 +49,6 @@ public class MainMenu extends MouseAdapter {
 		font = new Font("Roboto", Font.PLAIN, 100);
 	}
 
-	/**
-	 * Draw buttons (rectangles) and text in the Main Menu
-	 * 
-	 * @param g - Graphics object used to draw everything
-	 */
 	public void draw(Graphics g) {
 		Graphics2D g2d = (Graphics2D) g;
 		g.setFont(font);
