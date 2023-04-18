@@ -101,9 +101,7 @@ public class Game extends Canvas implements Runnable {
 		stop();
 	}
 
-	/**
-	 * start the thread and the game
-	 */
+	
 	public synchronized void start() {
 		gameThread = new Thread(this);
 		
@@ -121,23 +119,20 @@ public class Game extends Canvas implements Runnable {
 		}
 	}
 
-	/**
-	 * draw the back and all the objects
-	 */
+	
 	public void draw() {
-		// Initialize drawing tools first before drawing
+		
 
 		BufferStrategy buffer = this.getBufferStrategy(); // extract buffer so we can use them
-		// a buffer is basically like a blank canvas we can draw on
-
-		if (buffer == null) { // if it does not exist, we can't draw! So create it please
-			this.createBufferStrategy(3); // Creating a Triple Buffer
+		
+		if (buffer == null) { 
+			this.createBufferStrategy(3); 
 			
 
 			return;
 		}
 
-		Graphics g = buffer.getDrawGraphics(); // extract drawing tool from the buffers
+		Graphics g = buffer.getDrawGraphics(); 
 		
 
 		// draw background
@@ -150,24 +145,23 @@ public class Game extends Canvas implements Runnable {
 		// draw ball
 		ball.draw(g);
 
-		// draw paddles (score will be drawn with them)
+		
 		leftPaddle.draw(g);
 		rightPaddle.draw(g);
 
-		// actually draw
-		g.dispose(); // Disposes of this graphics context and releases any system resources that it
-						// is using
-		buffer.show(); // actually shows us the 3 beautiful rectangles we drew...LOL
+		
+		g.dispose(); 
+		buffer.show(); 
 
 	}
 
 	
 	private void drawBackground(Graphics g) {
-		// black background
+		
 		g.setColor(Color.black);
 		g.fillRect(0, 0, WIDTH, HEIGHT);
 
-		// Dotted line in the middle
+		
 		g.setColor(Color.white);
 		Graphics2D g2d = (Graphics2D) g; 
 		
@@ -202,9 +196,7 @@ public class Game extends Canvas implements Runnable {
 		return 1;
 	}
 
-	/**
-	 * start of the program
-	 */
+	
 	public static void main(String[] args) {
 		new Game();
 	}
