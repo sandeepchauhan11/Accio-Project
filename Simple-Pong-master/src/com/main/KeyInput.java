@@ -3,12 +3,7 @@ package com.main;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-/**
- * process key input from the keyboard
- * 
- * @author Zayed
- *
- */
+
 public class KeyInput extends KeyAdapter {
 
 	private Paddle lp; // left paddle
@@ -19,12 +14,7 @@ public class KeyInput extends KeyAdapter {
 	private boolean rup = false;
 	private boolean rdown = false;
 
-	/**
-	 * constructor
-	 * 
-	 * @param p1 - paddle 1
-	 * @param p2 - paddle 2
-	 */
+	
 	public KeyInput(Paddle p1, Paddle p2) {
 
 		lp = p1;
@@ -80,18 +70,13 @@ public class KeyInput extends KeyAdapter {
 			ldown = false;
 		}
 
-		// this is the magic that will stop the lag
+		
 		if (!lup && !ldown)
 			lp.stop();
 		if (!rup && !rdown)
 			rp.stop();
 
-		/*
-		 * if you want to see what I'm talking about: comment the 2 'if' blocks above
-		 * completely (all 4 lines) uncomment what is in the 'if' blocks at the start of
-		 * this method/function run the game and start moving a paddle (change
-		 * directions quickly)
-		 */
+		
 	}
 
 }
