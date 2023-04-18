@@ -4,12 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 
-/**
- * class for the paddle
- * 
- * @author Zayed
- *
- */
+
 public class Paddle {
 
 	private int x, y; // positions
@@ -20,12 +15,7 @@ public class Paddle {
 	private Color color; // color of the paddle
 	private boolean left; // true if it's the left paddle
 
-	/**
-	 * create initial properties for the paddle
-	 * 
-	 * @param color - color of the paddle
-	 * @param left  - boolean to know if it's the left paddle or not
-	 */
+	
 	public Paddle(Color c, boolean left) {
 		// initial properties
 		color = c;
@@ -47,11 +37,6 @@ public class Paddle {
 		score++;
 	}
 
-	/**
-	 * Draw paddle (a rectangle), Draw score too
-	 * 
-	 * @param g - Graphics object used to draw everything
-	 */
 	public void draw(Graphics g) {
 
 		// draw paddle
@@ -59,8 +44,8 @@ public class Paddle {
 		g.fillRect(x, y, width, height);
 
 		// draw score
-		int sx; // x position of the string
-		int padding = 25; // space between dotted line and score
+		int sx; 
+		int padding = 25; 
 		String scoreText = Integer.toString(score);
 		Font font = new Font("Roboto", Font.PLAIN, 50);
 
@@ -76,11 +61,6 @@ public class Paddle {
 		g.drawString(scoreText, sx, 50);
 	}
 
-	/**
-	 * update position AND collision tests
-	 * 
-	 * @param b - the ball
-	 */
 	public void update(Ball b) {
 
 		// update position
@@ -104,11 +84,7 @@ public class Paddle {
 
 	}
 
-	/**
-	 * switches the direction
-	 * 
-	 * @param direction - -1 for up and 1 for down
-	 */
+	
 	public void switchDirections(int direction) {
 		vel = speed * direction;
 	}
